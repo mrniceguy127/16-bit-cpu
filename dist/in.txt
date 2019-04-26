@@ -1,0 +1,29 @@
+# Fibonacci Sequence
+
+       JMP    start
+
+one    DATA   0001    # Used for incremening / Decrementing
+fibend DATA   0000    # Used to keep track of indexes left
+curr   DATA   0000    # Current value of the current index in fib seq
+prev   DATA   0001    # Previous value of the current index of fib seq
+temp   DATA   0000    # temp storage for saving the previous current val
+
+start  INP    fibend  # Get input for desired index
+       CLA    fibend
+       SUB    one     # Subtract one from input for algorithmic purposes
+       STO    fibend
+
+loop   CLA    curr
+       STO    temp
+       ADD    prev    # Get next val
+       STO    curr    # Save that next val
+       CLA    temp    # Get new previous val
+       STO    prev    # Save the new previous val
+       CLA    fibend
+       SUB    one     # Subtract 1 from indexes left
+       TAC    end     # If negative, escape loop
+       STO    fibend  # If not, store new fibend.
+       JMP    loop    # Go back to top of loop
+
+end    OUT    curr    # Output the value at the desired index of the fib seq
+       HRS    00      # Halt. End program.
