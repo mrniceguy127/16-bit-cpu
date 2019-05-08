@@ -47,10 +47,10 @@ Seen at the top right of the highest level display. It displays values in hexade
 
 **Input Device:**
 Seen to the right of the PC. It acts as an input device, but I could not really simulate it well due to the limitations of the software I was using.
-  MODE: Toggles write mode on when one, and read otherwise.
-  NEXT: Retrieves the next piece of stored information within the input device.
-  RESETINDEX: Resets the current position be read/written to in the input device.
-  DATAOUT: The data currently being indexed.
+- **MODE**: Toggles write mode on when one, and read otherwise.
+- **NEXT**: Retrieves the next piece of stored information within the input device.
+- **RESETINDEX**: Resets the current position be read/written to in the input device.
+- **DATAOUT**: The data currently being indexed.
 
 
 
@@ -63,6 +63,7 @@ The instruction set is a set of instructions that the CPU can process. In my ins
 The instruction set is heavily inspired by the [CARDIAC](https://www.cs.drexel.edu/~bls96/museum/cardiac.html) instruction set. The main difference is that this CPU works in powers of 2 because of binary data representation, while the CARDIAC theoretically should work in powers of 10.
 
 **Instruction Set**
+
 Assembly | MACHINE INSTRUCTION (In decimal) | Description
 --- | --- | ---
 INP | 0 | Read an input into memory from a simple storage device.
@@ -77,6 +78,7 @@ HRS | 8 | Halt and reset.
 SFT | 9 | Shift the accumulator.
 
 **Special Keywords/Symbols**
+
 Keyword/Symbol | Description
 --- | ---
 DATA | Variable. Values are written in hexadecimal. Not an instruction.
@@ -131,12 +133,9 @@ end    OUT    curr    # Output the value at the desired index of the fib seq
 ```
 
 At the moment, you would put this in a plain text file called "in.txt" and save it. Then, you would place the assembler executable file in the same directory. Then, you run the executable and you will be given 3 files (at the moment): "out.bin.txt", ''out.hex.txt", and "out.hex.boot.txt". These files are as follows (with example output from input):
-- out.bin.txt - The binary version of the program machine code.
-  - The output is attached to this email.
-- out.hex.txt - The hexadecimal version of the program machine code.
-  - The output is attached to this email.
-- out.hex.boot.txt - A bootable hexadecimal version of the machine code. You can place all of this into the input device and set the first RAM address to (in hex) 0001 and the CPU will boot up the program from this input.
-  - The output is attached to this email.
+- `out.bin.txt` - The binary version of the program machine code.
+- `out.hex.txt` - The hexadecimal version of the program machine code.
+- `out.hex.boot.txt` - A bootable hexadecimal version of the machine code. You can place all of this into the input device and set the first RAM address to (in hex) 0001 and the CPU will boot up the program from this input.
 
 To demonstrate that this program works, Here is a screenshot with the resulting output of the bootable program (using 10, in decimal, as the input to the program):
 
